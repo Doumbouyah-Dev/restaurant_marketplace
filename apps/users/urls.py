@@ -1,10 +1,12 @@
 from django.urls import path
 
+
+
 from .views import (
     CustomTokenObtainPairView,
     CustomTokenRefreshView,
+    UserRegistrationView,
 )
-
 
 urlpatterns = [
     path(
@@ -17,5 +19,11 @@ urlpatterns = [
         "token/refresh/",
         CustomTokenRefreshView.as_view(),
         name="token_refresh",
+    ),
+    
+    path(
+    "register/",
+    UserRegistrationView.as_view(),
+    name="register",
     ),
 ]
