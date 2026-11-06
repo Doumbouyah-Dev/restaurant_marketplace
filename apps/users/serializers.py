@@ -96,7 +96,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         password = validated_data.pop("password")
 
         user = CustomUser.objects.create_user(
-            password=password,
+            secret=password,
             role=CustomUser.Role.CUSTOMER,
             **validated_data
         )
